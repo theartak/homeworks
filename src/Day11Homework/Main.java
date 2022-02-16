@@ -134,6 +134,24 @@ public class Main {
     }
 
     /**
+     * Task 6
+     * A method that returns the smallest natural divisor of a given number.
+     * (Alternative method).
+     */
+
+    public static int smallestDivisorAlt(int a) {
+        if (a % 2 == 0) {
+            return 2;
+        }
+        for (int i = 3; i * i <= a; i += 2) {
+            if (a % i == 0) {
+                return i;
+            }
+        }
+        return a;
+    }
+
+    /**
      * Task 7
      * A method that prints all the naturals of a given number in an ascending order.
      */
