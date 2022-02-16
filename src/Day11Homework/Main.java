@@ -216,6 +216,7 @@ public class Main {
     /**
      * Task 10
      * A method that accepts a binary number and converts it to decimal.
+     * (Uses for loop)
      */
 
     public static int convertBinaryToDecimal(long bin) {
@@ -232,7 +233,7 @@ public class Main {
     /**
      * Task 10
      * A method that accepts a binary number and converts it to decimal.
-     * (Uses while)
+     * (Uses while loop)
      */
 
     public static int convertBinToDecWhile(long bin) {
@@ -248,6 +249,21 @@ public class Main {
         return (int) dec;
     }
 
+    /**
+     * Task 10
+     * A method that accepts a binary number and converts it to decimal.
+     * (Even more optimal method)
+     */
+
+    public static int binToDecOpt(long bin) {
+        long dec = 0;
+        long pow = 1;
+        for (; bin != 0; bin /= 10) {
+            dec += (pow * bin % 10);
+            pow <<= 1;
+        }
+        return (int) dec;
+    }
 
     /**
      * Task 11
