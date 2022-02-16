@@ -350,6 +350,7 @@ public class Main {
     /**
      * Task 14
      * A method N*N sized checkerboard.
+     * (Alternative)
      */
 
     public static void printCheckerboardAlt(int a) {
