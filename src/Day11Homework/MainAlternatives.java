@@ -79,4 +79,31 @@ public class MainAlternatives {
             System.out.println(row);
         }
     }
+
+    public void printMultiplicationTableAlt(int n) {
+        for (int i = 0; i <= n; i++) {
+            if (i == 0) {
+                System.out.print(" * | ");
+            } else {
+                System.out.print(i + "   ");
+            }
+        }
+
+        System.out.print("\n____________________________________________\n");
+        for (int i = 1; i <= n; i++) {
+            if (i < 10) {
+                System.out.print(" " + i + " |");
+            } else {
+                System.out.print(i + " |");
+            }
+            for (int j = 1; j <= n; j++) {
+                if (i * j < 10) {
+                    System.out.printf("%2d  ", (i * j));
+                } else {
+                    System.out.printf(" %2d ", (i * j));
+                }
+            }
+            System.out.println();
+        }
+    }
 }
