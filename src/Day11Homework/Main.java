@@ -79,7 +79,7 @@ public class Main {
      * (While)
      */
 
-    public static int countDigits(int x, int d) {
+    public static int countDigitsWhile(int x, int d) {
         int count = 0;
         while (x > 0) {
             count = (x % 10 == d) ?
