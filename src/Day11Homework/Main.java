@@ -170,7 +170,7 @@ public class Main {
             bin /= 10;
             dec += remainder * Math.pow(2, i);
         }
-        return (int)dec;
+        return (int) dec;
     }
 
     /**
@@ -189,7 +189,7 @@ public class Main {
             dec += remainder * Math.pow(2, i);
             ++i;
         }
-        return (int)dec;
+        return (int) dec;
     }
 
 
@@ -228,7 +228,7 @@ public class Main {
 
     public static void gnche(int a) {
         int sum = 0;
-        if (a < 1){
+        if (a < 1) {
             System.out.println("Invalid input");
             return;
         }
@@ -269,6 +269,54 @@ public class Main {
                     System.out.print(" #");
                 } else {
                     System.out.print("# ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Task 15
+     * A method that accepts a size number from the user and prints a multiplication table of that size.
+     */
+
+    public static void printMultiplicationTable(int a) {
+        System.out.print(" * |");
+        for (int i = 1; i <= a; i++) {
+            if (i < 10) {
+                System.out.print("   " + i);
+            }
+            if (i >= 10 && i < 100) {
+                System.out.print("  " + i);
+            }
+            if (i >= 100 && i < 1000) {
+                System.out.print("  " + i);
+            }
+        }
+        System.out.println();
+        for (int i = 0; i <= a; i++) {
+            System.out.print("----");
+        }
+        System.out.println();
+        for (int i = 1; i <= a; i++) {
+            if (i < 10) {
+                System.out.print(" " + i + " |");
+            }
+            if (i >= 10 && i < 100) {
+                System.out.print(i + " |");
+            }
+            if (i >= 100 && i < 1000) {
+                System.out.print(i + "|");
+            }
+            for (int j = 1; j <= a; j++) {
+                if (i * j < 10) {
+                    System.out.print("   " + i * j);
+                }
+                if (i * j >= 10 && i * j < 100) {
+                    System.out.print("  " + i * j);
+                }
+                if (i * j >= 100 && i * j < 1000) {
+                    System.out.print(" " + i * j);
                 }
             }
             System.out.println();
