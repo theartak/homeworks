@@ -14,7 +14,7 @@ public class Main {
         //int c = sc.nextInt();
         //int d = sc.nextInt();
         //long l = sc.nextLong();
-        printExactSquares(2, 100);
+        reverseNumber(912931239);
     }
 
     /**
@@ -110,10 +110,10 @@ public class Main {
      * A method that reverse the given number.
      */
 
-    public static void reverseNumber(int i) {
-        int reverse = 0;
+    public static void reverseNumber(long i) {
+        long reverse = 0;
         for (; i != 0; i = i / 10) {
-            int remainder = i % 10;
+            long remainder = i % 10;
             reverse = reverse * 10 + remainder;
         }
         System.out.println(reverse);
