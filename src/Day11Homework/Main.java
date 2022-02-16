@@ -9,12 +9,12 @@ public class Main {
     static Random rand = new Random();
 
     public static void main(String[] args) {
-        int a = sc.nextInt();
+        //int a = sc.nextInt();
         //int b = sc.nextInt();
         //int c = sc.nextInt();
         //int d = sc.nextInt();
         //long l = sc.nextLong();
-        gnche(a);
+        printExactSquares(2, 100);
     }
 
     /**
@@ -76,16 +76,32 @@ public class Main {
     /**
      * Task 4
      * A method that accepts two numbers and prints the amount of second's digits in the first one.
+     * (While)
      */
 
-    public static void countDigits(int x, int d) {
+    public static int countDigits(int x, int d) {
         int count = 0;
         while (x > 0) {
             count = (x % 10 == d) ?
                     count + 1 : count;
             x = x / 10;
         }
-        System.out.println(count);
+        return count;
+    }
+
+    /**
+     * Task 4
+     * A method that accepts two numbers and prints the amount of second's digits in the first one.
+     * (For)
+     */
+
+    public static int countDigitsFor(int x, int d) {
+        int count = 0;
+        for (int i = x; i != 0; i /= 10){
+            if (i % 10 == d){
+                count++;
+            }
+        } return count;
     }
 
     /**
