@@ -14,7 +14,7 @@ public class Main {
         //int c = sc.nextInt();
         //int d = sc.nextInt();
         //long l = sc.nextLong();
-        printAllNaturalDivisors(40);
+        printNNPicture(4);
     }
 
     /**
@@ -344,6 +344,21 @@ public class Main {
                 }
             }
             System.out.println();
+        }
+    }
+
+    /**
+     * Task 14
+     * A method N*N sized checkerboard.
+     */
+
+    public static void printCheckerboardAlt(int a) {
+        String row = "";
+        for (int i = 0; i < a; i++) {
+            row += "*";
+        }
+        for (int i = 0; i < a; i++) {
+            System.out.println(row);
         }
     }
 
