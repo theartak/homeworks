@@ -14,7 +14,7 @@ public class Main {
         //int c = sc.nextInt();
         //int d = sc.nextInt();
         //long l = sc.nextLong();
-        reverseNumber(912931239);
+        printAllNaturalDivisors(40);
     }
 
     /**
@@ -157,11 +157,12 @@ public class Main {
      */
 
     public static void printAllNaturalDivisors(int a) {
-        for (int i = 1; i <= a; i++) {
+        for (int i = 1; i <= a / 2; i++) {
             if (a % i == 0) {
                 System.out.println(i);
             }
         }
+        System.out.println(a);
     }
 
     /**
@@ -177,6 +178,25 @@ public class Main {
             }
         }
         System.out.println(count);
+    }
+
+    /**
+     * Task 8
+     * A method that prints the count of all natural divisors of a given number.
+     * (Alternative method).
+     */
+
+    public static int allDivisorsAlt(int x) {
+        int count = 2;
+        for (int i = 2; i * i <= x; i++) {
+            if (x % i == 0) {
+                count += 2;
+                if (x / i == 1) {
+                    count--;
+                }
+            }
+        }
+        return count;
     }
 
     /**
