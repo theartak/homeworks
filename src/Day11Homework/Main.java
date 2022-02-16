@@ -97,11 +97,12 @@ public class Main {
 
     public static int countDigitsFor(int x, int d) {
         int count = 0;
-        for (int i = x; i != 0; i /= 10){
-            if (i % 10 == d){
+        for (int i = x; i != 0; i /= 10) {
+            if (i % 10 == d) {
                 count++;
             }
-        } return count;
+        }
+        return count;
     }
 
     /**
