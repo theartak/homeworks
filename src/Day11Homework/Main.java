@@ -309,7 +309,7 @@ public class Main {
                 System.out.print("  " + i);
             }
             if (i >= 100 && i < 1000) {
-                System.out.print("  " + i);
+                System.out.print(" " + i);
             }
         }
         System.out.println();
