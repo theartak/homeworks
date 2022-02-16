@@ -64,6 +64,7 @@ public class Main {
     public static void printExactSquares(int a, int b) {
         if (a > b) {
             System.out.println("Incorrect range");
+            return;
         }
         for (int i = a; i < b; i++) {
             if (Math.sqrt(i) == (int) Math.sqrt(i)) {
