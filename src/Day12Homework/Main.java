@@ -9,7 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
         int a = sc.nextInt();
-        swapMinMax(a);
+        //int index = sc.nextInt();
+        compressArray(a);
     }
 
     public static int[] inputArr(int a) {
@@ -249,6 +250,67 @@ public class Main {
         int swap = arr[maxIndex];
         arr[maxIndex] = arr[minIndex];
         arr[minIndex] = swap;
+        printArray(arr);
+    }
+
+    /**
+     * Task 14
+     * You are given an array of numbers and the index of an element in the
+     * array. Index is k. Remove the element with index k from the list by
+     * moving all elements to the right of the element with index k to the left.
+     */
+
+    public static void removeIndex(int a, int index) {
+        int[] arr = inputArr(a);
+        for (int i = index; i < a - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        for (int i = 0; i < a - 1; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    /**
+     * Task 15
+     * A method that prints the elements of the array which are present once.
+     */
+
+    public static void printUniqueElem(int a) {
+        int[] arr = inputArr(a);
+        for (int i = 0; i < a; i++) {
+            boolean unique = true;
+            for (int j = 0; j < a; j++) {
+                if (arr[i] == arr[j] && i != j) {
+                    unique = false;
+                }
+            }
+            if (unique) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+
+    /**
+     * Task 16
+     * An array of integers is given. It is required to “compress” it by moving
+     * all non-zero elements to the left side of the array without changing their
+     * order, and all zeros to the right side. The order of nonzero elements
+     * cannot be changed, an additional list cannot be used, the task must be
+     * completed in one pass through the array. Print the resulting array.
+     */
+
+    public static void compressArray(int a) {
+        int[] arr = inputArr(a);
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
+                if (arr[i] == 0 && arr[j] != 0 && j > i) {
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                    break;
+                }
+            }
+        }
         printArray(arr);
     }
 }
