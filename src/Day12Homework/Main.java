@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         int a = sc.nextInt();
-        diffElemsCount(a);
+        swapMinMax(a);
     }
 
     public static int[] inputArr(int a) {
@@ -118,15 +118,13 @@ public class Main {
 
     public static void largestElem(int a) {
         int[] arr = inputArr(a);
-        int max = arr[0];
         int index = 0;
         for (int i = 0; i < a; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+            if (arr[i] > arr[index]) {
                 index = i;
             }
         }
-        System.out.println("Largest element: " + max);
+        System.out.println("Largest element: " + arr[index]);
         System.out.println("Index: " + index);
     }
 
@@ -224,6 +222,33 @@ public class Main {
             arr[i] = arr[i - 1];
         }
         arr[0] = dif;
+        printArray(arr);
+    }
+
+    /**
+     * Task 13
+     * A method that swaps the smallest and largest elements of an array.
+     */
+
+    public static void swapMinMax(int a) {
+        int[] arr = inputArr(a);
+        int min = arr[0];
+        int max = arr[0];
+        int minIndex = 0;
+        int maxIndex = 0;
+        for (int i = 0; i < a; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+                minIndex = i;
+            }
+            if (max < arr[i]) {
+                max = arr[i];
+                maxIndex = i;
+            }
+        }
+        int swap = arr[maxIndex];
+        arr[maxIndex] = arr[minIndex];
+        arr[minIndex] = swap;
         printArray(arr);
     }
 }
