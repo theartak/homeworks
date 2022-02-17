@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         int a = sc.nextInt();
-        reverseAdjacentElems(a);
+        diffElemsCount(a);
     }
 
     public static int[] inputArr(int a) {
@@ -86,9 +86,9 @@ public class Main {
 
     public static void previousLarger(int a) {
         int[] arr = inputArr(a);
-        for (int i = 1; i < a - 1; i++) {
-            if (arr[i + 1] < arr[i]) {
-                System.out.println(arr[i]);
+        for (int i = 1; i < a; i++) {
+            if (arr[i - 1] < arr[i]) {
+                System.out.print(arr[i] + " ");
             }
         }
     }
@@ -106,6 +106,7 @@ public class Main {
                     (arr[i] < 0 && arr[i + 1] < 0)) {
                 System.out.print(arr[i] + " ");
                 System.out.print(arr[i + 1] + "\n");
+                break;
             }
         }
     }
@@ -118,12 +119,15 @@ public class Main {
     public static void largestElem(int a) {
         int[] arr = inputArr(a);
         int max = arr[0];
+        int index = 0;
         for (int i = 0; i < a; i++) {
             if (arr[i] > max) {
                 max = arr[i];
+                index = i;
             }
         }
-        System.out.println(max);
+        System.out.println("Largest element: " + max);
+        System.out.println("Index: " + index);
     }
 
     /**
@@ -150,6 +154,10 @@ public class Main {
     public static void diffElemsCount(int a) {
         int count = 1;
         int[] arr = inputArr(a);
+        if (a == 0) {
+            System.out.println("No elements in the array");
+            return;
+        }
         for (int i = 1; i < a; i++) {
             if (arr[i] > arr[i - 1]) {
                 count++;
