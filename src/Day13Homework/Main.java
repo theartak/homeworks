@@ -8,9 +8,9 @@ public class Main {
     static Random rand = new Random();
 
     public static void main(String[] args) {
-        //int a = sc.nextInt();
+        int a = sc.nextInt();
         //int b = sc.nextInt();
-        addTwoMatrices();
+        System.out.println(symmetricDiagonal(a));
     }
 
     public static int[][] inputSquareMatrix(int a) {
@@ -61,8 +61,6 @@ public class Main {
             for (int j = 0; j < a; j++) {
                 if (j == a - i - 1) {
                     mat[i][j] = 1;
-                } else {
-                    mat[i][j] = 0;
                 }
             }
         }
@@ -80,9 +78,7 @@ public class Main {
             for (int j = 0; j < a; j++) {
                 if (j == a - i - 1) {
                     mat[i][j] = 1;
-                } else if (i + j < a) {
-                    mat[i][j] = 0;
-                } else {
+                } else if (i + j >= a) {
                     mat[i][j] = 2;
                 }
             }
@@ -96,22 +92,16 @@ public class Main {
      * tells if its main diagonal is symmetric.
      */
 
-    public static void symmetricDiagonal(int a) {
+    public static boolean symmetricDiagonal(int a) {
         int[][] mat = inputSquareMatrix(a);
-        boolean symmetric = true;
         for (int i = 0; i < a; i++) {
             for (int j = i; j < a; j++) {
                 if (mat[i][j] != mat[j][i]) {
-                    symmetric = false;
-                    break;
+                    return false;
                 }
             }
         }
-        if (symmetric) {
-            System.out.println("The main diagonal is symmetric");
-        } else {
-            System.out.println("The main diagonal is not symmetric");
-        }
+        return true;
     }
 
     /**
