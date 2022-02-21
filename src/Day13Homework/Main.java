@@ -9,8 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
         int a = sc.nextInt();
-        //int b = sc.nextInt();
-        spiral2(a);
+        int b = sc.nextInt();
+        spiralOneZero(a, b);
     }
 
     public static int[][] inputSquareMatrix(int a) {
@@ -199,11 +199,43 @@ public class Main {
     }
 
     /**
+     * Task 9
+     * A method that prints a spiral of 1's and 0's.
+     */
+
+    public static void spiralOneZero(int a, int b) {
+        int[][] mat = new int[a][b];
+        int k = 0;
+        int i = 0, j = 0;
+        while (k < a) {
+            while (j < b - k - 1) {
+                mat[i][j] = 1;
+                j++;
+            }
+            while (i < a - k - 1) {
+                mat[i][j] = 1;
+                i++;
+            }
+            while (j >= k) {
+                mat[i][j] = 1;
+                j--;
+            }
+            j = k;
+            k += 2;
+            while (i > k) {
+                mat[i][j] = 1;
+                i--;
+            }
+        }
+        printMatrix(mat);
+    }
+
+    /**
      * Task 10
      * A method that prints a spiral starting from 0 with increasing values.
      */
 
-    public static void spiral2(int a) {
+    public static void spiralAsc(int a) {
         int[][] mat = new int[a][a];
         int rowStart = 0;
         int rowEnd = mat.length - 1;
