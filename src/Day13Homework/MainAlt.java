@@ -10,7 +10,7 @@ public class MainAlt {
     public static void main(String[] args) {
         int a = sc.nextInt();
         //int b = sc.nextInt();
-        System.out.println(symmetricDiagonal(a));
+        spiralOneZeroAlt(a);
     }
 
     public static int[][] inputSquareMatrix(int a) {
@@ -66,5 +66,29 @@ public class MainAlt {
             }
         }
         return true;
+    }
+
+    public static void spiralOneZeroAlt(int a) {
+        int[][] mat = new int[a][a];
+        int count = 0;
+        int count1 = 0;
+        for (int j = 0; j < a / 3; j++) {
+            for (int i = count1; i < a - count; i++) {                 //up-horizontal
+                mat[count][i] = 1;
+            }
+            for (int i = count; i < a - count; i++) {                  //right-vertical
+                mat[i][a - 1 - count] = 1;
+            }
+            for (int i = a - 1 - count; i >= count; i--) {             //down-horizontal
+                mat[a - 1 - count][i] = 1;
+            }
+            for (int i = a - 1 - count; i > 1 + count; i--) {          //left-vertical
+                mat[i][count] = 1;
+            }
+            count += 2;
+            if (count1 == 0) count1 += 1;
+            else count1 += 2;
+        }
+        printMatrix(mat);
     }
 }
