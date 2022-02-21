@@ -52,8 +52,6 @@ public class MainAlt {
 
     /**
      * Task 3
-     * A method that accepts a matrix from the user and
-     * tells if its main diagonal is symmetric.
      */
 
     public static boolean symmetricDiagonal(int a) {
@@ -67,6 +65,10 @@ public class MainAlt {
         }
         return true;
     }
+
+    /**
+     * Task 9
+     */
 
     public static void spiralOneZeroAlt(int a) {
         int[][] mat = new int[a][a];
