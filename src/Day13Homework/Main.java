@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         int a = sc.nextInt();
         //int b = sc.nextInt();
-        System.out.println(symmetricDiagonal(a));
+        spiral2(a);
     }
 
     public static int[][] inputSquareMatrix(int a) {
@@ -196,5 +196,42 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    /**
+     * Task 10
+     * A method that prints a spiral starting from 0 with increasing values.
+     */
+
+    public static void spiral2(int a) {
+        int[][] mat = new int[a][a];
+        int rowStart = 0;
+        int rowEnd = mat.length - 1;
+        int colStart = 0;
+        int colEnd = mat.length - 1;
+        int num = 0;
+        while (rowStart <= rowEnd) {
+            for (int j = colStart; j <= colEnd; j++) {
+                mat[rowStart][j] = num;
+                num++;
+            }
+            rowStart++;
+            for (int i = rowStart; i <= rowEnd; i++) {
+                mat[i][colEnd] = num;
+                num++;
+            }
+            colEnd--;
+            for (int j = colEnd; j >= colStart; j--) {
+                mat[rowEnd][j] = num;
+                num++;
+            }
+            rowEnd--;
+            for (int i = rowEnd; i >= rowStart; i--) {
+                mat[i][colStart] = num;
+                num++;
+            }
+            colStart++;
+        }
+        printMatrix(mat);
     }
 }
