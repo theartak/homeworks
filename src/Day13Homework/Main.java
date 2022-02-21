@@ -200,7 +200,7 @@ public class Main {
 
     /**
      * Task 9
-     * A method that prints a spiral of 1's and 0's.
+     * A method that prints a spiral of ones and zeros.
      */
 
     public static void spiralOneZero(int a, int b) {
