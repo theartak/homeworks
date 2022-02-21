@@ -59,7 +59,7 @@ public class MainAlt {
     public static boolean symmetricDiagonal(int a) {
         int[][] mat = inputSquareMatrix(a);
         for (int i = 0; i < a; i++) {
-            for (int j = i; j < a; j++) {
+            for (int j = i; j + 1 < a; j++) {
                 if (mat[i][j] != mat[j][i]) {
                     return false;
                 }
