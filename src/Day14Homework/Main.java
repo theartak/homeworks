@@ -11,7 +11,7 @@ public class Main {
         String str = sc.nextLine();
         //int index = sc.nextInt();
         //char c = sc.next().charAt(0);
-        System.out.println(amountOfVowels(str));
+        System.out.println(firstNonDupeChar(str));
     }
 
     /**
@@ -116,15 +116,9 @@ public class Main {
         str = str.toLowerCase();
         for (int i = 0; i < str.length(); i++) {
             ch = str.charAt(i);
-            if (ch == 'a' || ch == 'i' || ch == 'e' ||
-                    ch == 'o' || ch == 'u') {
+            if (isVowel(ch)) {
                 vowels++;
-            }
-        }
-        for (int i = 0; i < str.length(); i++) {
-            ch = str.charAt(i);
-            if (ch == '0' || ch == '1' || ch == '2' || ch == '3' || ch == '4'
-                    || ch == '5' || ch == '6' || ch == '7' || ch == '8' || ch == '9') {
+            } else if (isDigit(ch)) {
                 digits++;
             }
         }
@@ -185,7 +179,7 @@ public class Main {
 
     public static boolean isHexadecimal(String str) {
         str = str.toLowerCase();
-        return str.matches("^[0-9a-fA-F]+$");
+        return str.matches("^[0-9a-f]+$");
     }
 
     /**
@@ -196,7 +190,7 @@ public class Main {
     public static void binaryToDecimalString(String str) {
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            if (ch != '0' && ch != '1') {
+            if (!isBinary(str)) {
                 System.out.println("Error: Invalid binary string " + "\"" + str + "\"");
                 return;
             }
@@ -212,32 +206,20 @@ public class Main {
         System.out.println("The equivalent decimal number for binary " + "\"" + str + "\"" + " is: " + dec);
     }
 
-    public static int dupeChars(String str) {
-        str = str.toLowerCase();
-        int len = str.length();
-        int count = 0;
-        for (int i = 0; i < len; i++) {
-            for (int j = 1; j < len; j++) {
-                if (str.charAt(i) == str.charAt(j)) {
-                    count++;
-
-                }
-            }
-        }
-        return count;
-    }
-
     /**
      * Task 13
      * A method that returns the first unique character of the given string.
      */
 
     public static char firstNonDupeChar(String str) {
-        for (int i = 0; i < str.length(); i++) {
-            boolean dupe = true;
-            for (int j = 0; j < str.length(); j++) {
+        boolean dupe = false;
+        int len = str.length();
+        for (int i = 0; i < len; i++) {
+            dupe = true;
+            for (int j = 0; j < len; j++) {
                 if (str.charAt(i) == str.charAt(j) && i != j) {
                     dupe = false;
+                    break;
                 }
             }
             if (dupe) {
