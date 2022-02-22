@@ -20,8 +20,7 @@ public class Main {
 
     public static boolean isVowel(char c) {
         boolean vow = false;
-        if (c == 'a' || c == 'i' || c == 'e' || c == 'o' || c == 'u' ||
-                c == 'A' || c == 'I' || c == 'E' || c == 'O' || c == 'U') {
+        if (String.valueOf(c).toLowerCase().matches("[aeiou]+")) {
             vow = true;
         }
         return vow;
@@ -29,11 +28,18 @@ public class Main {
 
     public static boolean isDigit(char c) {
         boolean dig = false;
-        if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4'
-                || c == '5' || c == '6' || c == '7' || c == '8' || c == '9') {
+        if (String.valueOf(c).matches("[0123456789]+")) {
             dig = true;
         }
         return dig;
+    }
+
+    public static boolean isConsonant(char c) {
+        boolean con = false;
+        if (String.valueOf(c).toLowerCase().matches("[b-df-hj-np-tv-z]+")) {
+            con = true;
+        }
+        return con;
     }
 
     /**
@@ -51,7 +57,7 @@ public class Main {
      */
 
     public static String returnChar(String str, int index) {
-        if (index > str.length()) {
+        if (index > str.length() || index < 0) {
             return "Index is larger than the length of the string";
         }
         return String.valueOf(str.charAt(index));
