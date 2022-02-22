@@ -212,7 +212,7 @@ public class Main {
      */
 
     public static char firstNonDupeChar(String str) {
-        boolean dupe = false;
+        boolean dupe = true;
         int len = str.length();
         for (int i = 0; i < len; i++) {
             dupe = true;
