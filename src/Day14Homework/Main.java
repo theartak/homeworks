@@ -58,7 +58,7 @@ public class Main {
 
     public static String returnChar(String str, int index) {
         if (index > str.length() || index < 0) {
-            return "Index is larger than the length of the string";
+            return "Invalid index";
         }
         return String.valueOf(str.charAt(index));
     }
