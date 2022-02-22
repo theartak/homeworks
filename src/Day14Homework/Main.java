@@ -19,27 +19,15 @@ public class Main {
      */
 
     public static boolean isVowel(char c) {
-        boolean vow = false;
-        if (String.valueOf(c).toLowerCase().matches("[aeiou]+")) {
-            vow = true;
-        }
-        return vow;
+        return String.valueOf(c).toLowerCase().matches("[aeiou]+");
     }
 
     public static boolean isDigit(char c) {
-        boolean dig = false;
-        if (String.valueOf(c).matches("[0123456789]+")) {
-            dig = true;
-        }
-        return dig;
+        return String.valueOf(c).matches("[0123456789]+");
     }
 
     public static boolean isConsonant(char c) {
-        boolean con = false;
-        if (String.valueOf(c).toLowerCase().matches("[b-df-hj-np-tv-z]+")) {
-            con = true;
-        }
-        return con;
+        return String.valueOf(c).toLowerCase().matches("[b-df-hj-np-tv-z]+");
     }
 
     /**
