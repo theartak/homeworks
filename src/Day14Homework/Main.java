@@ -141,16 +141,12 @@ public class Main {
      */
 
     public static boolean isPalindrome(String str) {
-        boolean pal = false;
         String reverseStr = "";
         int len = str.length();
         for (int i = len - 1; i >= 0; --i) {
             reverseStr = reverseStr + str.charAt(i);
         }
-        if (str.toLowerCase().equals(reverseStr.toLowerCase())) {
-            pal = true;
-        }
-        return pal;
+        return str.toLowerCase().equals(reverseStr.toLowerCase());
     }
 
     /**
