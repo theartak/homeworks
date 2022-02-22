@@ -11,7 +11,29 @@ public class Main {
         String str = sc.nextLine();
         //int index = sc.nextInt();
         //char c = sc.next().charAt(0);
-        System.out.println(reverseString(str));
+        System.out.println(amountOfVowels(str));
+    }
+
+    /**
+     * Extra methods
+     */
+
+    public static boolean isVowel(char c) {
+        boolean vow = false;
+        if (c == 'a' || c == 'i' || c == 'e' || c == 'o' || c == 'u' ||
+                c == 'A' || c == 'I' || c == 'E' || c == 'O' || c == 'U') {
+            vow = true;
+        }
+        return vow;
+    }
+
+    public static boolean isDigit(char c) {
+        boolean dig = false;
+        if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4'
+                || c == '5' || c == '6' || c == '7' || c == '8' || c == '9') {
+            dig = true;
+        }
+        return dig;
     }
 
     /**
@@ -56,11 +78,11 @@ public class Main {
 
     public static int amountOfVowels(String str) {
         int vowels = 0;
+        char ch;
         str = str.toLowerCase();
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            if (ch == 'a' || ch == 'i' || ch == 'e' ||
-                    ch == 'o' || ch == 'u') {
+            ch = str.charAt(i);
+            if (isVowel(ch)) {
                 vowels++;
             }
         }
@@ -90,16 +112,17 @@ public class Main {
     public static void countVowelsDigits(String str) {
         double vowels = 0;
         double digits = 0;
+        char ch;
         str = str.toLowerCase();
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+            ch = str.charAt(i);
             if (ch == 'a' || ch == 'i' || ch == 'e' ||
                     ch == 'o' || ch == 'u') {
                 vowels++;
             }
         }
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+            ch = str.charAt(i);
             if (ch == '0' || ch == '1' || ch == '2' || ch == '3' || ch == '4'
                     || ch == '5' || ch == '6' || ch == '7' || ch == '8' || ch == '9') {
                 digits++;
