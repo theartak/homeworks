@@ -11,7 +11,7 @@ public class Main {
         String str = sc.nextLine();
         //int index = sc.nextInt();
         //char c = sc.next().charAt(0);
-        System.out.println(firstNonDupeChar(str));
+        System.out.println(isPalindromeAlt(str));
     }
 
     /**
@@ -163,6 +163,24 @@ public class Main {
             pal = true;
         }
         return pal;
+    }
+
+    /**
+     * Task 8
+     * A method that checks if a string is a palindrome.
+     * (Alternative solution).
+     */
+
+    public static boolean isPalindromeAlt(String str) {
+        int i = 0;
+        int j = str.length() - 1;
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
     }
 
     /**
