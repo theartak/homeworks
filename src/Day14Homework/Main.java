@@ -11,7 +11,7 @@ public class Main {
         String str = sc.nextLine();
         //int index = sc.nextInt();
         //char c = sc.next().charAt(0);
-        System.out.println(isPalindromeAlt(str));
+        System.out.println(isBinary(str));
     }
 
     /**
@@ -189,11 +189,7 @@ public class Main {
      */
 
     public static boolean isBinary(String str) {
-        boolean bin = false;
-        if (str.matches("[01]+")) {
-            bin = true;
-        }
-        return bin;
+        return str.matches("[01]+");
     }
 
     /**
