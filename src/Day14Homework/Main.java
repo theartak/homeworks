@@ -10,8 +10,8 @@ public class Main {
     public static void main(String[] args) {
         String str = sc.nextLine();
         //int index = sc.nextInt();
-        char c = sc.next().charAt(0);
-        System.out.println(givenCharInString(str, c));
+        //char c = sc.next().charAt(0);
+        System.out.println(reverseString(str));
     }
 
     /**
@@ -28,8 +28,11 @@ public class Main {
      * A method that returns a char of a given index from the string.
      */
 
-    public static char returnChar(String str, int index) {
-        return str.charAt(index);
+    public static String returnChar(String str, int index) {
+        if (index > str.length()) {
+            return "Index is larger than the length of the string";
+        }
+        return String.valueOf(str.charAt(index));
     }
 
     /**
@@ -38,7 +41,7 @@ public class Main {
      */
 
     public static boolean givenChar(String str, char c) {
-        for (int i = 0; i < str.length() - 1; i++) {
+        for (int i = 0; i < str.length(); i++) {
             if (c == str.charAt(i)) {
                 return true;
             }
@@ -69,12 +72,12 @@ public class Main {
      * A method that reverses the given string.
      */
 
-    public static String reverseString(String str) {
-        String reverse = "";
+    public static StringBuilder reverseString(String str) {
+        StringBuilder reverse = new StringBuilder("");
         char ch;
         for (int i = str.length() - 1; i >= 0; i--) {
             ch = str.charAt(i);
-            reverse += ch;
+            reverse.append(ch);
         }
         return reverse;
     }
@@ -126,7 +129,7 @@ public class Main {
      * A method that checks if a string is a palindrome.
      */
 
-    public static Boolean isPalindrome(String str) {
+    public static boolean isPalindrome(String str) {
         boolean pal = false;
         String reverseStr = "";
         int len = str.length();
@@ -144,12 +147,10 @@ public class Main {
      * A method that checks if a string is binary.
      */
 
-    public static Boolean isBinary(String str) {
+    public static boolean isBinary(String str) {
         boolean bin = false;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.matches("[01]+")) {
-                bin = true;
-            }
+        if (str.matches("[01]+")) {
+            bin = true;
         }
         return bin;
     }
@@ -159,7 +160,7 @@ public class Main {
      * A method that checks if a string is hexadecimal.
      */
 
-    public static Boolean isHexadecimal(String str) {
+    public static boolean isHexadecimal(String str) {
         str = str.toLowerCase();
         return str.matches("^[0-9a-fA-F]+$");
     }
@@ -186,6 +187,21 @@ public class Main {
             num *= 2;
         }
         System.out.println("The equivalent decimal number for binary " + "\"" + str + "\"" + " is: " + dec);
+    }
+
+    public static int dupeChars(String str) {
+        str = str.toLowerCase();
+        int len = str.length();
+        int count = 0;
+        for (int i = 0; i < len; i++) {
+            for (int j = 1; j < len; j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    count++;
+
+                }
+            }
+        }
+        return count;
     }
 
     /**
