@@ -11,7 +11,7 @@ public class Main {
         String str = sc.nextLine();
         //int index = sc.nextInt();
         //char c = sc.next().charAt(0);
-        System.out.println(isBinary(str));
+        System.out.println(firstNonDupeChar(str));
     }
 
     /**
@@ -236,7 +236,7 @@ public class Main {
      */
 
     public static char firstNonDupeChar(String str) {
-        boolean dupe = true;
+        boolean dupe;
         int len = str.length();
         for (int i = 0; i < len; i++) {
             dupe = true;
