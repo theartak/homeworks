@@ -14,8 +14,13 @@ public class Main {
     static Random rand = new Random();
 
     public static void main(String[] args) {
+        //long l = sc.nextLong();
+        //double start = sc.nextDouble();
+        //double step = sc.nextDouble();
+        //int b = sc.nextInt();
         //int n = sc.nextInt();
-        spiralAsc(4, 10);
+        int a = sc.nextInt();
+        rotateMatrix(a);
     }
 
     /**
@@ -29,6 +34,15 @@ public class Main {
             reverseStr = reverseStr + str.charAt(i);
         }
         return str.toLowerCase().equals(reverseStr.toLowerCase());
+    }
+
+    public static int[][] inputSquareMatrix(int a) {
+        int[][] mat = new int[a][a];
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++)
+                mat[i][j] = sc.nextInt();
+        }
+        return mat;
     }
 
     public static void printMatrix(int mat[][]) {
@@ -54,9 +68,9 @@ public class Main {
      * A method that returns the N power of 2.
      */
 
-    public static Long countPowerOfN(int n) {
+    public static long countPowerOfN(int n) {
         if (n < 1 || n > 15) {
-            return null;
+            return -1;
         }
         return (long) Math.pow(2, n);
     }
@@ -66,15 +80,15 @@ public class Main {
      * A method that prints how much times passed since the start of a day in n minutes.
      * (Using LocalDateTime)
      */
-    public static void howMuchTimePassedLDT(long n) {
+    public static void howMuchTimePassedLDT(long l) {
         LocalDateTime time = LocalDateTime.of(2022, 1, 1, 0, 0);
-        Duration m = Duration.ofMinutes(n);
+        Duration m = Duration.ofMinutes(l);
         time = time.plus(m);
         System.out.print(time.toLocalTime().getHour() + " " + time.toLocalTime().getMinute());
     }
 
-    public static void howMuchTimePassed(long n) {
-        System.out.println(n / 60 + " " + n % 60);
+    public static void howMuchTimePassed(long l) {
+        System.out.println(l / 60 + " " + l % 60);
     }
 
     /**
@@ -187,45 +201,98 @@ public class Main {
         }
     }
 
+    /**
+     * Task 11
+     * A method that prints an n*m sized multiplication table.
+     */
+
     public static void multTab(int n, int m) {
         int[][] mat = new int[n][m];
-        for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat[i].length; j++) {
-                mat[i][j] = (i + 1) * (j + 1);
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            mat[i][j] = mat[j][i] = i * j;
+            j++;
+            --i;
+            if (j == m) {
+                j = 0;
+                i++;
             }
         }
         printMatrix(mat);
     }
 
-    public static void spiralAsc(int a, int b) {
-        int[][] mat = new int[a][b];
-        int rowStart = 0;
-        int rowEnd = mat[b].length - 1;
-        int colStart = 0;
-        int colEnd = mat[a].length - 1;
-        int num = 0;
-        while (rowStart <= rowEnd) {
-            for (int j = colStart; j <= colEnd; j++) {
-                mat[rowStart][j] = num;
-                num++;
+    /**
+     * Task 13
+     * A method that prints a spiral of ascending numbers.
+     */
+
+    public static void spiralAsc(int n, int m) {
+        int[][] mat = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                for (int j = 0; j < m; j++) {
+                    mat[i][j] = i * 10 + j;
+                }
+            } else {
+                for (int j = 0; j < m; j++) {
+                    mat[i][j] = i * 10 + m - 1 - j;
+                }
             }
-            rowStart++;
-            for (int i = rowStart; i <= rowEnd; i++) {
-                mat[i][colEnd] = num;
-                num++;
-            }
-            colEnd--;
-            for (int j = colEnd; j >= colStart; j--) {
-                mat[rowEnd][j] = num;
-                num++;
-            }
-            rowEnd--;
-            for (int i = rowEnd; i >= rowStart; i--) {
-                mat[i][colStart] = num;
-                num++;
-            }
-            colStart++;
         }
         printMatrix(mat);
+    }
+
+    /**
+     * Task 14
+     * A method that lets the user rotate a matrix 90, or 180 degrees.
+     */
+
+    public static void rotateMatrix(int a) {
+        System.out.println("Input your matrix");
+        int[][] mat = inputSquareMatrix(a);
+        System.out.println("Input 1 to rotate by 90 degrees, or 2 to rotate by 180 degrees");
+        int n = sc.nextInt();
+        if (n == 1){
+            printMatrix(rotateMatrix90(mat));
+        } else if (n == 2){
+            printMatrix(rotateMatrix180(mat));
+        } else {
+            System.out.println("Illegal choice");
+        }
+    }
+
+    public static int[][] rotateMatrix90(int[][] mat) {
+        int len = mat.length;
+        for (int i = 0; i < len / 2; i++) {
+            for (int j = i; j < len - i - 1; j++) {
+                int temp = mat[i][j];
+                mat[i][j] = mat[len - 1 - j][i];
+                mat[len - 1 - j][i] = mat[len - 1 - i][len - 1 - j];
+                mat[len - 1 - i][len - 1 - j] = mat[j][len - 1 - i];
+                mat[j][len - 1 - i] = temp;
+            }
+        }
+        return mat;
+    }
+
+    public static int[][] rotateMatrix180(int[][] mat) {
+        int row = mat.length;
+        int col = mat[0].length;
+        int num;
+        for (int i = 0; i < row / 2; i++) {
+            for (int j = 0; j < col; j++) {
+                num = mat[i][j];
+                mat[i][j] = mat[row - i - 1][col - j - 1];
+                mat[row - i - 1][col - j - 1] = num;
+            }
+        }
+        if ((row & 1) == 1) {
+            for (int j = 0; j < col / 2; j++) {
+                num = mat[row / 2][j];
+                mat[row / 2][j] = mat[row / 2][col - j - 1];
+                mat[row / 2][col - j - 1] = num;
+            }
+        }
+        return mat;
     }
 }
