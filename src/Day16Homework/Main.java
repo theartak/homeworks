@@ -20,7 +20,7 @@ public class Main {
         //int b = sc.nextInt();
         //int n = sc.nextInt();
         int a = sc.nextInt();
-        rotateMatrix(a);
+        System.out.println(countPowerOfNBit(a));
     }
 
     /**
@@ -54,7 +54,7 @@ public class Main {
         }
     }
 
-    public static void printCharMatrix(char mat[][]) {
+    public static void printMatrix(char mat[][]) {
         for (char[] ints : mat) {
             System.out.println();
             for (char anInt : ints) {
@@ -68,11 +68,24 @@ public class Main {
      * A method that returns the N power of 2.
      */
 
-    public static long countPowerOfN(int n) {
+    public static int countPowerOfN(int n) {
         if (n < 1 || n > 15) {
             return -1;
         }
-        return (long) Math.pow(2, n);
+        return (int) Math.pow(2, n);
+    }
+
+    /**
+     * Task 3
+     * A method that returns the N power of 2.
+     * (Using Bitwise).
+     */
+
+    public static int countPowerOfNBit(int n) {
+        if (n < 1 || n > 15) {
+            return -1;
+        }
+        return 2 << n - 1;
     }
 
     /**
@@ -114,11 +127,14 @@ public class Main {
      * A method that checks if the number is prime.
      */
     public static boolean isPrime(int n) {
-        if (n <= 1)
+        if (n <= 1) {
             return false;
-        for (int i = 2; i < n; i++)
-            if (n % i == 0)
+        }
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
                 return false;
+            }
+        }
         return true;
     }
 
@@ -161,7 +177,7 @@ public class Main {
                 mat[i][j] = (i + j) % 2 == 0 ? 'O' : 'X';
             }
         }
-        printCharMatrix(mat);
+        printMatrix(mat);
     }
 
     /**
@@ -252,12 +268,15 @@ public class Main {
         int[][] mat = inputSquareMatrix(a);
         System.out.println("Input 1 to rotate by 90 degrees, or 2 to rotate by 180 degrees");
         int n = sc.nextInt();
-        if (n == 1){
-            printMatrix(rotateMatrix90(mat));
-        } else if (n == 2){
-            printMatrix(rotateMatrix180(mat));
-        } else {
-            System.out.println("Illegal choice");
+        switch (n) {
+            case 1:
+                printMatrix(rotateMatrix90(mat));
+                break;
+            case 2:
+                printMatrix(rotateMatrix180(mat));
+                break;
+            default:
+                System.out.println("Illegal choice");
         }
     }
 
