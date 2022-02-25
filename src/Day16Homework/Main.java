@@ -15,9 +15,9 @@ public class Main {
         //double step = sc.nextDouble();
         //int b = sc.nextInt();
         //int n = sc.nextInt();
-        //int a = sc.nextInt();
-        int[][] matrix = new int[4][10];
-        diagonalFillingMatrix(matrix);
+        int a = sc.nextInt();
+        //int[][] matrix = new int[4][10];
+        rotateMatrix(a);
     }
 
     /**
@@ -219,19 +219,16 @@ public class Main {
      * A method that prints an n*m sized multiplication table.
      */
 
-    public static void multTab(int n, int m) {
-        int[][] mat = new int[n][m];
-        int j = 0;
-        for (int i = 0; i < n; i++) {
-            mat[i][j] = mat[j][i] = i * j;
-            j++;
-            --i;
-            if (j == m) {
-                j = 0;
-                i++;
-            }
+    public static void multiplicationTable(int n, int m) {
+        int[][] table = new int[n][m];
+        int row;
+        int col;
+        for (int i = m; i < n * m; i++) {
+            row = i / m;
+            col = i % m;
+            table[row][col] = row * col;
         }
-        printMatrix(mat);
+        printMatrix(table);
     }
 
     /**
