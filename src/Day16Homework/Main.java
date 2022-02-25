@@ -15,8 +15,9 @@ public class Main {
         //double step = sc.nextDouble();
         //int b = sc.nextInt();
         //int n = sc.nextInt();
-        int a = sc.nextInt();
-        rotateMatrix(a);
+        //int a = sc.nextInt();
+        int[][] matrix = new int[4][10];
+        diagonalFillingMatrix(matrix);
     }
 
     /**
@@ -231,6 +232,30 @@ public class Main {
             }
         }
         printMatrix(mat);
+    }
+
+    public static void diagonalFillingMatrix(int[][] matrix) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+        int val = 0;
+        int col;
+        for (int j = 0; j < m; j++) {
+            col = j;
+            for (int row = 0; (row < n && col >= 0); row++) {
+                matrix[row][col] = val;
+                val++;
+                col--;
+            }
+        }
+        for (int i = 1; i < n; i++) {
+            col = m - 1;
+            for (int row = i; (row < n && col >= 0); row++) {
+                matrix[row][col] = val;
+                val++;
+                col--;
+            }
+        }
+        printMatrix(matrix);
     }
 
     /**
