@@ -1,13 +1,9 @@
 package Day16Homework;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.util.Random;
 import java.util.Scanner;
-
-import Day13Homework.Main.*;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
@@ -20,7 +16,7 @@ public class Main {
         //int b = sc.nextInt();
         //int n = sc.nextInt();
         int a = sc.nextInt();
-        System.out.println(countPowerOfNBit(a));
+        rotateMatrix(a);
     }
 
     /**
