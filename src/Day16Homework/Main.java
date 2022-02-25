@@ -234,6 +234,11 @@ public class Main {
         printMatrix(mat);
     }
 
+    /**
+     * Task 12
+     * A method that fills a matrix diagonally.
+     */
+
     public static void diagonalFillingMatrix(int[][] matrix) {
         int n = matrix.length;
         int m = matrix[0].length;
