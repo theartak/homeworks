@@ -305,13 +305,14 @@ public class Main {
 
     public static int[][] rotateMatrix90(int[][] mat) {
         int len = mat.length;
+        int newLen = len - 1;
         for (int i = 0; i < len / 2; i++) {
-            for (int j = i; j < len - i - 1; j++) {
+            for (int j = i; j < newLen - i; j++) {
                 int temp = mat[i][j];
-                mat[i][j] = mat[len - 1 - j][i];
-                mat[len - 1 - j][i] = mat[len - 1 - i][len - 1 - j];
-                mat[len - 1 - i][len - 1 - j] = mat[j][len - 1 - i];
-                mat[j][len - 1 - i] = temp;
+                mat[i][j] = mat[newLen - j][i];
+                mat[newLen - j][i] = mat[newLen - i][newLen - j];
+                mat[newLen - i][newLen - j] = mat[j][newLen - i];
+                mat[j][newLen - i] = temp;
             }
         }
         return mat;
