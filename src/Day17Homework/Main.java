@@ -11,9 +11,9 @@ public class Main {
 //        float[] b = {1, 2, 3, 4, 5};
 //        double[] d = {1, 2, 3, 4, 5};
 //        int choice = sc.nextInt();
-//        float celsius = 0;
+        float celsius = 23;
 //        float fahrenheit = 64;
-        System.out.println(remainder(331, 5));
+        fahrenheitCelsiusSwitch(celsius, 2);
     }
 
     /**
@@ -150,29 +150,34 @@ public class Main {
 
     /**
      * Task 9
+     * A method that:
+     * a) Accepts parameters celsius and choice, returns fahrenheit.
+     * b) Accepts parameters choice and fahrenheit, returns celsius.
      */
 
-    public static void fahrenheitCelsius(float celsius, int choice) {
-        if (choice == 1) {
-            int fahrenheit = (int) ((celsius * 9) / 5) + 32;
-            System.out.println(fahrenheit);
-        } else if (choice == 2) {
-            double fahrenheit = (double) ((celsius * 9) / 5) + 32;
-            System.out.println(Math.round(fahrenheit));
-        } else {
-            System.out.println("Invalid argument");
+    public static void fahrenheitCelsiusSwitch(float celsius, int choice) {
+        switch (choice) {
+            case 1:
+                System.out.println((int) ((celsius * 9) / 5) + 32);
+                break;
+            case 2:
+                System.out.println(((celsius * 9) / 5) + 32);
+                break;
+            default:
+                System.out.println("Invalid argument");
         }
     }
 
-    public static void fahrenheitCelsius(int choice, float fahrenheit) {
-        if (choice == 1) {
-            int celsius = (int) ((fahrenheit - 32) * 5 / 9);
-            System.out.println(celsius);
-        } else if (choice == 2) {
-            double celsius = (double) ((fahrenheit - 32) * 5 / 9);
-            System.out.println(Math.round(celsius));
-        } else {
-            System.out.println("Invalid argument");
+    public static void fahrenheitCelsiusSwitch(int choice, float fahrenheit) {
+        switch (choice) {
+            case 1:
+                System.out.println((int) ((fahrenheit - 32) * 5 / 9));
+                break;
+            case 2:
+                System.out.println((fahrenheit - 32) * 5 / 9);
+                break;
+            default:
+                System.out.println("Invalid argument");
         }
     }
 
