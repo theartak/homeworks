@@ -10,9 +10,9 @@ public class Main {
 //        int[] a = {1, 2, 3, 4, 5};
 //        float[] b = {1, 2, 3, 4, 5};
 //        double[] d = {1, 2, 3, 4, 5};
-        //int choice = sc.nextInt();
-        //float celsius = 0;
-        //float fahrenheit = 64;
+//        int choice = sc.nextInt();
+//        float celsius = 0;
+//        float fahrenheit = 64;
         System.out.println(remainder(331, 5));
     }
 
