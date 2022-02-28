@@ -91,7 +91,10 @@ public class Main {
     }
 
     public static boolean search(int[] array, int argument, int index) {
-        return array[index] == argument && index < array.length;
+        if (index > array.length - 1 || index < 0) {
+            return false;
+        }
+        return array[index] == argument;
     }
 
     /**
