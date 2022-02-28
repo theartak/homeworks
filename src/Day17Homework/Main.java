@@ -151,8 +151,8 @@ public class Main {
     /**
      * Task 9
      * A method that:
-     * a) Accepts parameters celsius and choice, returns fahrenheit.
-     * b) Accepts parameters choice and fahrenheit, returns celsius.
+     * a) Accepts parameters celsius and choice, returns fahrenheit
+     * b) Accepts parameters choice and fahrenheit, returns celsius
      */
 
     public static void fahrenheitCelsiusSwitch(float celsius, int choice) {
