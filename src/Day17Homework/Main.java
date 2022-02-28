@@ -84,17 +84,14 @@ public class Main {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == a) {
                 index = i;
+                break;
             }
         }
         return index;
     }
 
     public static boolean search(int[] array, int argument, int index) {
-        boolean bool = false;
-        if (array[index] == argument) {
-            bool = true;
-        }
-        return bool;
+        return array[index] == argument && index < array.length;
     }
 
     /**
@@ -102,17 +99,17 @@ public class Main {
      * A method that returns the perimeter of a square, square or a rectangle depending on the argument.
      */
 
-    public static int square(int a) {
+    public static int area(int a) {
         int pi = (int) Math.PI;
-        return 2 * pi * a;
+        return pi * a * a;
     }
 
-    public static float square(float a) {
+    public static float area(float a) {
         return a * a;
     }
 
-    public static int square(int a, int b) {
-        return 2 * (a + b);
+    public static int area(int a, int b) {
+        return a * b;
     }
 
     /**
@@ -125,11 +122,11 @@ public class Main {
     }
 
     public static int max(int a, int b, int c) {
-        return Math.max(a, Math.max(b, c));
+        return max(a, max(b, c));
     }
 
     public static int max(int a, int b, int c, int d) {
-        return Math.max(Math.max(a, b), Math.max(c, d));
+        return max(a, max(b, c, d));
     }
 
     /**
@@ -139,6 +136,7 @@ public class Main {
     public static int distance(int x1, int x2) {
         return (int) Math.pow((Math.pow(x1, 2) + Math.pow(x2, 2)), 0.5);
     }
+
     //x1 - x coordinate of a
     //x2 - y coordinate of a
     //x3 - x coordinate of b
@@ -194,13 +192,6 @@ public class Main {
     }
 
     public static int remainder(int num, int a) {
-        int digit = 0;
-        int sum = 0;
-        while (num > 0) {
-            digit = num % 10;
-            sum = sum + digit;
-            num = num / 10;
-        }
-        return sum % a;
+        return remainder(num) % a;
     }
 }
