@@ -45,7 +45,6 @@ public final class PersonValidator {
 
     public static boolean isValidNationality(String nationality) {
         return nationality != null && nationality.length() != 0 &&
-                !nationality.toLowerCase().equals("azerbaijani") &&
                 nationality.toLowerCase().matches("[a-z]+");
     }
 }
