@@ -1,5 +1,7 @@
 package Day18Homework;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         storeClass();
@@ -26,8 +28,7 @@ public class Main {
         Store store = new Store();
         store.setName("\"Books & Accessories\"");
         store.setCountOfWorkers(5);
-        store.setPhoneNumber("12345678");
+        store.setPhoneNumber("56789123");
         store.setProducts(new int[]{1, 2, 5, 19, 13});
-        System.out.println(store.display());
     }
 }

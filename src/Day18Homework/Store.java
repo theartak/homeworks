@@ -19,55 +19,53 @@ public class Store {
         this.setProducts(products);
     }
 
-    public String getCountOfWorkers() {
-        if (countOfWorkers < 3 || countOfWorkers > 50) {
-            return "Invalid count of workers";
-        }
-        return countOfWorkers + "";
+    public int getCountOfWorkers() {
+        return countOfWorkers;
     }
 
     public void setCountOfWorkers(int countOfWorkers) {
-        this.countOfWorkers = countOfWorkers;
+        if (countOfWorkers < 2 || countOfWorkers > 50) {
+            System.out.println("Out of range");
+        } else {
+            this.countOfWorkers = countOfWorkers;
+        }
     }
 
     public String getName() {
-        if (name.length() < 3) {
-            return "Invalid name";
-        }
         return name;
     }
 
     public void setName(String name) {
+        if (name == null || name.length() < 3) {
+            System.out.println("Invalid name");
+        }
         this.name = name;
     }
 
     String getPhoneNumber() {
-        if (phoneNumber.length() < 8 &&
-                !(phoneNumber.matches("[0-9]+")) &&
-                Integer.parseInt(phoneNumber) < 0) {
-            return "Invalid phone number";
-        }
         return phoneNumber;
     }
 
-    void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
+        if (phoneNumber == null ||
+                phoneNumber.length() != 8 ||
+                !(phoneNumber.matches("[0-9]+")) ||
+                Integer.parseInt(phoneNumber) < 0) {
+            System.out.println("Invalid phone number");
+        }
         this.phoneNumber = phoneNumber;
     }
 
-    int[] getProducts() {
+    public int[] getProducts() {
         return products;
     }
 
-    void setProducts(int[] products) {
+    public void setProducts(int[] products) {
         this.products = products;
     }
 
-    private String toString(String s) {
+    public String display() {
         return ("Name: " + getName() + "\nCount of workers: " + getCountOfWorkers() + "\nPhone number: " +
                 getPhoneNumber() + "\nProducts: " + Arrays.toString(getProducts()));
-    }
-
-    public String display() {
-        return toString(toString());
     }
 }

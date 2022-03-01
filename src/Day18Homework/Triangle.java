@@ -5,47 +5,50 @@ public class Triangle {
     private int sideB;
     private int sideC;
 
-    int getSideA() {
-        if (sideA < 1 || sideA > 20) {
-            return -999999;
-        }
-        return sideA;
-    }
-
-    void setSideA(int sideA) {
-        this.sideA = sideA;
-    }
-
-    int getSideB() {
-        if (sideB < 1 || sideB > 20) {
-            return -999999;
-        }
-        return sideB;
-    }
-
-    void setSideB(int sideB) {
-        this.sideB = sideB;
-    }
-
-    int getSideC() {
-        if (sideC < 1 || sideC > 20) {
-            return -999999;
-        }
-        return sideC;
-    }
-
-    private void setSideC(int sideC) {
-        this.sideC = sideC;
-    }
-
     public Triangle() {
 
     }
 
     public Triangle(int sideA, int sideB, int sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
         this.setSideA(sideA);
         this.setSideB(sideB);
         this.setSideC(sideC);
+    }
+
+    public int getSideA() {
+        return sideA;
+    }
+
+    public void setSideA(int sideA) {
+        if (sideA < 1 || sideA > 20) {
+            System.out.println("Side A is out of range");
+        }
+        this.sideA = sideA;
+    }
+
+    int getSideB() {
+        return sideB;
+    }
+
+    void setSideB(int sideB) {
+        if (sideB < 1 || sideB > 20) {
+            System.out.println("Side B is out of range");
+        }
+        this.sideB = sideB;
+    }
+
+    int getSideC() {
+        return sideC;
+    }
+
+    private void setSideC(int sideC) {
+        if (sideC < 1 || sideC > 20) {
+            System.out.println("Side C is out of range");
+        }
+        this.sideC = sideC;
     }
 
     private boolean isTriangleValid(int sideA, int sideB, int sideC) {
