@@ -13,18 +13,13 @@ public final class StoreValidator {
     }
 
     public static boolean isValidName(String name) {
-        if (name == null || name.length() == 0) {
-            return false;
-        }
-        int len = name.length();
-        return len >= 3;
+        return name != null && name.length() >= 3;
     }
 
     public static boolean isValidPhoneNumber(String phoneNumber) {
-        if (phoneNumber == null || phoneNumber.length() == 0) {
-            return false;
-        }
-        return phoneNumber.length() == 8 && phoneNumber.matches(zeroToNine) &&
+        return phoneNumber != null &&
+                phoneNumber.length() == 8 &&
+                phoneNumber.matches(zeroToNine) &&
                 Integer.parseInt(phoneNumber) >= 0;
     }
 

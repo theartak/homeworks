@@ -10,28 +10,21 @@ public final class PersonValidator {
     }
 
     public static boolean isValidFirstName(String firstName) {
-        if (firstName == null || firstName.length() == 0) {
-            return false;
-        }
-        int len = firstName.length();
-        return (len >= 3 && len <= 15);
+        return firstName != null &&
+                firstName.length() >= 3 &&
+                firstName.length() <= 15;
     }
 
     public static boolean isValidLastName(String lastName) {
-        if (lastName == null || lastName.length() == 0) {
-            return false;
-        }
-        int len = lastName.length();
-        return (len >= 6 && len <= 20);
+        return lastName != null &&
+                lastName.length() >= 6 &&
+                lastName.length() <= 20;
     }
 
     public static boolean isValidPassportID(String passportID) {
-        if (passportID == null || passportID.length() == 0) {
-            return false;
-        }
-        int len = passportID.length();
-        return (passportID.substring(0, 2).toUpperCase().matches("AN") &&
-                passportID.substring(2).matches(zeroToNine) && len == 8);
+        return passportID != null &&
+                passportID.substring(0, 2).toUpperCase().matches("AN") &&
+                passportID.substring(2).matches(zeroToNine) && passportID.length() == 8;
     }
 
     public static boolean isValidAge(int age) {
@@ -39,15 +32,13 @@ public final class PersonValidator {
     }
 
     public static boolean isValidGender(String gender) {
-        if (gender == null || gender.length() == 0) {
-            return false;
-        }
-        return (gender.toLowerCase().equalsIgnoreCase("male") ||
-                gender.toLowerCase().equalsIgnoreCase("female"));
+        return gender != null && (
+                gender.toLowerCase().equalsIgnoreCase("male") ||
+                        gender.toLowerCase().equalsIgnoreCase("female"));
     }
 
     public static boolean isValidNationality(String nationality) {
-        return nationality != null && nationality.length() != 0 &&
-                nationality.toLowerCase().matches(aToZ);
+        return nationality != null && nationality.length() != 0
+                && nationality.toLowerCase().matches(aToZ);
     }
 }

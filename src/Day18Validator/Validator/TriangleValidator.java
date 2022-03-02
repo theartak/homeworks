@@ -6,12 +6,14 @@ public final class TriangleValidator {
 
     }
 
-    public static boolean isValidSide(int side){
+    public static boolean isValidSide(int side) {
         return side > 1 && side < 20;
     }
 
     public static boolean isValidTriangle(int sideA, int sideB, int sideC) {
-        return sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA;
+        return sideA + sideB > sideC &&
+                sideA + sideC > sideB &&
+                sideB + sideC > sideA;
     }
 
     public static boolean isTriangleRight(int sideA, int sideB, int sideC) {

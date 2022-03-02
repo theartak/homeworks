@@ -6,7 +6,7 @@ import static Day18Validator.Validator.StoreValidator.*;
 
 public class Main {
     public static void main(String[] args) {
-        storeClass();
+        personClass();
     }
 
     public static void personClass() {
