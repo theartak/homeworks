@@ -2,8 +2,8 @@ package Day18Validator.Validator;
 
 public final class PersonValidator {
 
-    final static String aToZ = "[a-z]+";
-    final static String zeroToNine = "[0-9]+";
+    private final static String aToZ = "[a-z]+";
+    private final static String zeroToNine = "[0-9]+";
 
     private PersonValidator() {
 

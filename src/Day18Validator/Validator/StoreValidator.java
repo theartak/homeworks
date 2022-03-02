@@ -2,7 +2,7 @@ package Day18Validator.Validator;
 
 public final class StoreValidator {
 
-    final static String zeroToNine = "[0-9]+";
+    private final static String zeroToNine = "[0-9]+";
 
     private StoreValidator() {
 
