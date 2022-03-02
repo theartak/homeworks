@@ -12,9 +12,9 @@ public class Triangle {
     }
 
     public Triangle(int sideA, int sideB, int sideC) {
-        this.setSideA(sideA);
-        this.setSideB(sideB);
-        this.setSideC(sideC);
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
     }
 
     public int getSideA() {

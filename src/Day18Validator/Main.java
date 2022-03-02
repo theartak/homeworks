@@ -34,13 +34,13 @@ public class Main {
 
     public static void triangleClass() {
         Triangle triangle = new Triangle(3, 4, 5);
-        if (isValidSideA(3)) {
+        if (isValidSide(3)) {
             triangle.setSideA(3);
         }
-        if (isValidSideB(4)) {
+        if (isValidSide(4)) {
             triangle.setSideB(4);
         }
-        if (isValidSideC(5)) {
+        if (isValidSide(5)) {
             triangle.setSideC(5);
         }
         if (isTriangleRight(triangle.getSideA(), triangle.getSideB(), triangle.getSideC())) {
@@ -54,16 +54,16 @@ public class Main {
     public static void storeClass() {
         Store store = new Store();
         int[] product = {1, 2, 3, 4, 5};
-        if(isValidCountOfWorkers(10)){
+        if (isValidCountOfWorkers(10)) {
             store.setCountOfWorkers(10);
         }
-        if(isValidName("Books & Accessories")){
+        if (isValidName("Books & Accessories")) {
             store.setName("Books & Accessories");
         }
-        if(isValidPhoneNumber("12345678")){
-            store.setPhoneNumber("12345678");
+        if (isValidPhoneNumber("09919091")) {
+            store.setPhoneNumber("09919091");
         }
-        if(isValidProduct(product)){
+        if (isValidProduct(product)) {
             store.setProducts(product);
         }
         System.out.println(store.display());

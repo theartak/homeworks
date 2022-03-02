@@ -1,6 +1,8 @@
 package Day18Validator.Validator;
 
-public class StoreValidator {
+public final class StoreValidator {
+
+    final static String zeroToNine = "[0-9]+";
 
     private StoreValidator() {
 
@@ -22,8 +24,8 @@ public class StoreValidator {
         if (phoneNumber == null || phoneNumber.length() == 0) {
             return false;
         }
-        return phoneNumber.length() == 8 || phoneNumber.matches("[0-9]+") ||
-                Integer.parseInt(phoneNumber) > 0;
+        return phoneNumber.length() == 8 && phoneNumber.matches(zeroToNine) &&
+                Integer.parseInt(phoneNumber) >= 0;
     }
 
     public static boolean isValidProduct(int[] products) {

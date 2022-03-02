@@ -13,10 +13,10 @@ public class Store {
     }
 
     public Store(int countOfWorkers, String name, String phoneNumber, int[] products) {
-        this.setCountOfWorkers(countOfWorkers);
-        this.setName(name);
-        this.setPhoneNumber(phoneNumber);
-        this.setProducts(products);
+        this.countOfWorkers = countOfWorkers;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.products = products;
     }
 
     public int getCountOfWorkers() {
@@ -24,11 +24,7 @@ public class Store {
     }
 
     public void setCountOfWorkers(int countOfWorkers) {
-        if (countOfWorkers < 2 || countOfWorkers > 50) {
-            System.out.println("Out of range");
-        } else {
-            this.countOfWorkers = countOfWorkers;
-        }
+        this.countOfWorkers = countOfWorkers;
     }
 
     public String getName() {
@@ -36,9 +32,6 @@ public class Store {
     }
 
     public void setName(String name) {
-        if (name == null || name.length() < 3) {
-            System.out.println("Invalid name");
-        }
         this.name = name;
     }
 

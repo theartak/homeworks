@@ -2,6 +2,9 @@ package Day18Validator.Validator;
 
 public final class PersonValidator {
 
+    final static String aToZ = "[a-z]+";
+    final static String zeroToNine = "[0-9]+";
+
     private PersonValidator() {
 
     }
@@ -28,7 +31,7 @@ public final class PersonValidator {
         }
         int len = passportID.length();
         return (passportID.substring(0, 2).toUpperCase().matches("AN") &&
-                passportID.substring(2).matches("[0-9]+") && len == 8);
+                passportID.substring(2).matches(zeroToNine) && len == 8);
     }
 
     public static boolean isValidAge(int age) {
@@ -39,12 +42,12 @@ public final class PersonValidator {
         if (gender == null || gender.length() == 0) {
             return false;
         }
-        return (gender.toLowerCase().equals("male") ||
-                gender.toLowerCase().equals("female"));
+        return (gender.toLowerCase().equalsIgnoreCase("male") ||
+                gender.toLowerCase().equalsIgnoreCase("female"));
     }
 
     public static boolean isValidNationality(String nationality) {
         return nationality != null && nationality.length() != 0 &&
-                nationality.toLowerCase().matches("[a-z]+");
+                nationality.toLowerCase().matches(aToZ);
     }
 }
