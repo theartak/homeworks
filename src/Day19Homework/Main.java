@@ -1,10 +1,7 @@
 package Day19Homework;
 
-import Day19Homework.Day19Task1.Animal;
-import Day19Homework.Day19Task1.Dog;
-import Day19Homework.Day19Task2.AccountingT2;
-import Day19Homework.Day19Task2.TaxAccountingT2;
-import Day19Homework.Day19Task2.FinancialAccountT2;
+import Day19Homework.Day19Task1.*;
+import Day19Homework.Day19Task2.*;
 import Day19Homework.Day19Task3.*;
 
 public class Main {
