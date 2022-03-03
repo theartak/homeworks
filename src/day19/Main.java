@@ -59,7 +59,7 @@ public class Main {
         t.account();
     }
 
-    public static void taxAccountingClassT3(){
+    public static void taxAccountingClassT3() {
         TaxAccountingT3 t = new TaxAccountingT3();
         t.setCompanyName("Cool IT Company");
         t.setCountOfEmployees(200);

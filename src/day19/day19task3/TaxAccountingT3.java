@@ -3,11 +3,11 @@ package day19.day19task3;
 public class TaxAccountingT3 extends AccountingT3 {
     protected int taxPercentage;
 
-    public TaxAccountingT3(){
+    public TaxAccountingT3() {
 
     }
 
-    public TaxAccountingT3(int taxPercentage){
+    public TaxAccountingT3(int taxPercentage) {
         super();
         this.taxPercentage = taxPercentage;
     }
