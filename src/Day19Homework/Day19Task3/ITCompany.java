@@ -1,14 +1,14 @@
-package Day19Homework;
+package Day19Homework.Day19Task3;
 
-public class Task3_1_ITCompany {
-    private int countOfEmployees;
-    private String departmentName;
+public class ITCompany {
+    protected int countOfEmployees;
+    protected String departmentName;
 
-    public Task3_1_ITCompany() {
+    public ITCompany() {
 
     }
 
-    public Task3_1_ITCompany(int countOfEmployees, String departmentName) {
+    public ITCompany(int countOfEmployees, String departmentName) {
         this.countOfEmployees = countOfEmployees;
         this.departmentName = departmentName;
     }

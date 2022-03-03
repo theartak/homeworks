@@ -1,6 +1,6 @@
-package Day19Homework;
+package Day19Homework.Day19Task1;
 
-public class Task1_2_Dog extends Task1_1_Animal {
+public class Dog extends Animal {
     @Override
     public void voice() {
         System.out.println("Woof!");

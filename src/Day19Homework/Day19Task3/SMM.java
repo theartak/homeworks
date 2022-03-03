@@ -1,12 +1,13 @@
-package Day19Homework;
+package Day19Homework.Day19Task3;
 
-public class Task3_5_SMM extends Task3_1_ITCompany {
-    private String smm;
+public class SMM extends ITCompany {
+    protected String smm;
 
-    public Task3_5_SMM() {
+    public SMM() {
     }
 
-    public Task3_5_SMM(String smm) {
+    public SMM(String smm) {
+        super();
         this.smm = smm;
     }
 

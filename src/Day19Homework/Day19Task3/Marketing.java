@@ -1,12 +1,13 @@
-package Day19Homework;
+package Day19Homework.Day19Task3;
 
-public class Task3_4_Marketing extends Task3_1_ITCompany {
-    private String marketing;
+public class Marketing extends ITCompany {
+    protected String marketing;
 
-    public Task3_4_Marketing() {
+    public Marketing() {
     }
 
-    public Task3_4_Marketing(String marketing) {
+    public Marketing(String marketing) {
+        super();
         this.marketing = marketing;
     }
 

@@ -1,12 +1,12 @@
-package Day19Homework;
+package Day19Homework.Day19Task2;
 
-public class Task2_2_TaxAccounting extends Task2_1_Accounting {
+public class TaxAccountingT2 extends AccountingT2 {
     private int taxPercentage;
 
-    public Task2_2_TaxAccounting() {
+    public TaxAccountingT2() {
     }
 
-    public Task2_2_TaxAccounting(int taxPercentage) {
+    public TaxAccountingT2(int taxPercentage) {
         this.taxPercentage = taxPercentage;
     }
 

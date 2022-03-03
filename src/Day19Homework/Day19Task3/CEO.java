@@ -1,12 +1,13 @@
-package Day19Homework;
+package Day19Homework.Day19Task3;
 
-public class Task3_6_CEO extends Task3_1_ITCompany {
-    private String ceo;
+public class CEO extends ITCompany {
+    protected String ceo;
 
-    public Task3_6_CEO() {
+    public CEO() {
     }
 
-    public Task3_6_CEO(String ceo) {
+    public CEO(String ceo) {
+        super();
         this.ceo = ceo;
     }
 
