@@ -1,8 +1,8 @@
 package Day19Homework;
 
-import Day19Homework.Day19Task1.*;
-import Day19Homework.Day19Task2.*;
-import Day19Homework.Day19Task3.*;
+import Day19Homework.day19task1.*;
+import Day19Homework.day19task2.*;
+import Day19Homework.day19task3.*;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Day19Homework.Day19Task1;
+package Day19Homework.day19task1;
 
 public class Animal {
     public void voice() {

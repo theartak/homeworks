@@ -1,12 +1,13 @@
-package Day19Homework.Day19Task2;
+package Day19Homework.day19task3;
 
-public class FinancialAccountT2 extends TaxAccountingT2 {
-    private int salary;
+public class FinancialAccountT3 extends TaxAccountingT3 {
+    protected int salary;
 
-    public FinancialAccountT2() {
+    public FinancialAccountT3() {
     }
 
-    public FinancialAccountT2(int salary) {
+    public FinancialAccountT3(int salary) {
+        super();
         this.salary = salary;
     }
 

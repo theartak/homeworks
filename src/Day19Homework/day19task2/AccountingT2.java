@@ -1,4 +1,4 @@
-package Day19Homework.Day19Task2;
+package Day19Homework.day19task2;
 
 public class AccountingT2 {
     private int countOfEmployees;

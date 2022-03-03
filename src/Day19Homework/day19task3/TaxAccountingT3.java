@@ -1,4 +1,4 @@
-package Day19Homework.Day19Task3;
+package Day19Homework.day19task3;
 
 public class TaxAccountingT3 extends AccountingT3 {
     protected int taxPercentage;
