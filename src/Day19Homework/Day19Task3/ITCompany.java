@@ -2,15 +2,16 @@ package Day19Homework.Day19Task3;
 
 public class ITCompany {
     protected int countOfEmployees;
+    protected String companyName;
     protected String departmentName;
 
     public ITCompany() {
 
     }
 
-    public ITCompany(int countOfEmployees, String departmentName) {
+    public ITCompany(int countOfEmployees, String companyName) {
         this.countOfEmployees = countOfEmployees;
-        this.departmentName = departmentName;
+        this.companyName = companyName;
     }
 
     public int getCountOfEmployees() {
@@ -19,6 +20,14 @@ public class ITCompany {
 
     public void setCountOfEmployees(int countOfEmployees) {
         this.countOfEmployees = countOfEmployees;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getDepartmentName() {
@@ -31,6 +40,6 @@ public class ITCompany {
 
     public void account() {
         System.out.println("Count of employees: " + getCountOfEmployees());
-        System.out.println("Department name: " + getDepartmentName());
+        System.out.println("Department name: " + getCompanyName());
     }
 }

@@ -21,7 +21,7 @@ public class Main {
         d.eat();
     }
 
-    public static void accountingClass1() {
+    public static void accountingClassT2() {
         AccountingT2 t = new AccountingT2();
         t.setCountOfEmployees(10);
         t.setDepartmentName("Production management");
@@ -36,7 +36,7 @@ public class Main {
         t.account();
     }
 
-    public static void financialAccountingClass1() {
+    public static void financialAccountingClassT2() {
         FinancialAccountT2 t = new FinancialAccountT2();
         t.setCountOfEmployees(6);
         t.setDepartmentName("Project management");
@@ -48,19 +48,27 @@ public class Main {
     public static void itCompanyClass() {
         ITCompany it = new ITCompany();
         it.setCountOfEmployees(200);
-        it.setDepartmentName("Cool IT company");
+        it.setCompanyName("Cool IT company");
         it.account();
     }
 
-    public static void accountingClass2() {
+    public static void accountingClassT3() {
         AccountingT3 t = new AccountingT3();
         t.setCountOfEmployees(10);
         t.setDepartmentName("Production management");
-        t.setTaxPercentage(25);
         t.account();
     }
 
-    public static void financialAccountingClass2() {
+    public static void taxAccountingClassT3(){
+        TaxAccountingT3 t = new TaxAccountingT3();
+        t.setCompanyName("Cool IT Company");
+        t.setCountOfEmployees(200);
+        t.setDepartmentName("QA dept.");
+        t.setTaxPercentage(15);
+        t.account();
+    }
+
+    public static void financialAccountingClassT3() {
         FinancialAccountT3 t = new FinancialAccountT3();
         t.setCountOfEmployees(6);
         t.setDepartmentName("Project management");

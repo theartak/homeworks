@@ -1,6 +1,6 @@
 package Day19Homework.Day19Task3;
 
-public class FinancialAccountT3 extends AccountingT3 {
+public class FinancialAccountT3 extends TaxAccountingT3 {
     protected int salary;
 
     public FinancialAccountT3() {

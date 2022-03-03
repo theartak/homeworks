@@ -1,28 +1,28 @@
 package Day19Homework.Day19Task3;
 
 public class AccountingT3 extends ITCompany {
-    protected int taxPercentage;
+    protected String departmentName;
 
     public AccountingT3() {
     }
 
-    public AccountingT3(int taxPercentage) {
+    public AccountingT3(String departmentName) {
         super();
-        this.taxPercentage = taxPercentage;
+        this.departmentName = departmentName;
     }
 
-    public int getTaxPercentage() {
-        return taxPercentage;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setTaxPercentage(int taxPercentage) {
-        this.taxPercentage = taxPercentage;
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
     @Override
     public void account() {
+        System.out.println("Company name: " + getCompanyName());
         System.out.println("Count of employees: " + getCountOfEmployees());
         System.out.println("Department name: " + getDepartmentName());
-        System.out.println("Tax percentage: " + getTaxPercentage() + "%");
     }
 }
