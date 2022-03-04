@@ -13,14 +13,20 @@ public class Main {
 
     public static void circleClass() {
         Circle c = new Circle();
-        c.getArea(5);
-        c.getPerimeter(5);
+        c.setRadius(5);
+        c.calculateArea(c.getRadius());
+        c.getArea();
+        c.calculatePerimeter(c.getRadius());
+        c.getPerimeter();
     }
 
     public static void squareClass() {
         Square s = new Square();
-        s.getArea(5);
-        s.getPerimeter(5);
+        s.setRadius(5);
+        s.calculateArea(s.getRadius());
+        s.getArea();
+        s.calculatePerimeter(s.getRadius());
+        s.getPerimeter();
     }
 
     public static void programmingClass() {

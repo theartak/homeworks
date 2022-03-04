@@ -12,12 +12,22 @@ public class Square extends Shape {
 //    }
 
     @Override
-    public void getArea(double radius) {
-        System.out.println("The are of the square equals: " + (radius * radius));
+    public double calculateArea(double getRadius) {
+        return getRadius * getRadius;
     }
 
     @Override
-    public void getPerimeter(double radius) {
-        System.out.println("The perimeter of the square equals: " + (4 * radius));
+    public void getArea() {
+        System.out.println(calculateArea(getRadius()));
+    }
+
+    @Override
+    public double calculatePerimeter(double getRadius) {
+        return 4 * getRadius;
+    }
+
+    @Override
+    public void getPerimeter() {
+        System.out.println(calculatePerimeter(getRadius()));
     }
 }
