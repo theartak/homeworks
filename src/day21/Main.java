@@ -62,7 +62,10 @@ public class Main {
         r.setA(2);
         r.setB(4);
         s.setA(5);
-        double[] arr = {c.area(), c.perimeter(), r.area(), r.perimeter(), s.area(), s.perimeter()};
-        System.out.println(Arrays.toString(arr));
+        Shape[] arr = {c, r, s};
+        for (Shape shape : arr) {
+            System.out.println(shape.area());
+            System.out.println(shape.perimeter());
+        }
     }
 }
