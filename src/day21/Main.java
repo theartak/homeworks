@@ -64,8 +64,8 @@ public class Main {
         s.setA(5);
         Shape[] arr = {c, r, s};
         for (Shape shape : arr) {
-            System.out.println(shape.area());
-            System.out.println(shape.perimeter());
+            System.out.println("Area: " + shape.area());
+            System.out.println("Perimeter: " + shape.perimeter());
         }
     }
 }
