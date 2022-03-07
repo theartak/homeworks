@@ -4,10 +4,6 @@ public class Animal2 {
     protected int age;
     protected String name;
 
-    public Animal2(){
-
-    }
-
     public int getAge() {
         return age;
     }
