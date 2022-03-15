@@ -20,6 +20,13 @@ public class Student extends Person {
     }
 
     @Override
+    public int hashCode() {
+        int hash = super.hashCode();
+        hash = hash * 11 + grade;
+        return hash;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

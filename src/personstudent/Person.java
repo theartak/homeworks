@@ -32,7 +32,7 @@ public class Person {
 
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 7;
         hash = hash * 31 + ((name == null) ? 0 : name.hashCode());
         hash = hash * 31 + age;
         return hash;
