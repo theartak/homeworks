@@ -3,12 +3,12 @@ package day23;
 public class Main {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        list.add(10);
-        list.add(30);
-        list.add(40);
-        list.add(50);
+        list.add(1);
+        list.add(3);
+        list.add(4);
+        list.add(5);
         System.out.println(list.toString());
-        list.add(0, 20);
+        list.add(0, 2);
         System.out.println(list.toString());
         list.add(3,5);
         System.out.println(list.toString());
