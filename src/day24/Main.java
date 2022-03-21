@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        dupeCharsInString("aabbccd");
+        System.out.println(longestUniqueSubstring("abcdaefjh"));
     }
 
     /**
@@ -87,8 +87,7 @@ public class Main {
      * A method that returns the first non-repeated character in a string.
      */
 
-    public static Character firstNonRepeatedCharacter() {
-        String str = "aabbccd";
+    public static Character firstNonRepeatedCharacter(String str) {
         HashMap<Character, Integer> characterHashTable = new LinkedHashMap<>();
         int length;
         Character ch;
@@ -113,8 +112,7 @@ public class Main {
      * A method that returns the length of the longest substring with unique characters.
      */
 
-    public static int longestUniqueSubstring() {
-        String str = "abcdaefjh";
+    public static int longestUniqueSubstring(String str) {
         HashMap<Character, Integer> map = new HashMap<>();
         int length = 0;
         int start = 0;
