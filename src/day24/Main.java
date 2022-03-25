@@ -4,39 +4,21 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(longestUniqueSubstring("abcdaefjh"));
+        int[] arr = {1, 2, 1};
+        System.out.println(firstNonDupe("aabbc"));
     }
 
     /**
      * Task 1
-     * A method that returns false if a set contains a duplicate, else returns true.
+     * A method that determines whether an array contains duplicates, or not.
      */
-    public static boolean containsDupesSet() {
-        HashSet<Integer> set = new HashSet<>();
-        set.add(1);
-        return set.add(1);
-    }
-
-    /**
-     * Task 1
-     * (Alternative solution)
-     */
-    public static void containsDupes() {
-        int[] arr = {1, 2, 3, 4, 5, 1};
-        int min = -1;
-        HashSet<Integer> set = new HashSet<>();
-
-        for (int i = arr.length - 1; i >= 0; i--) {
-            if (set.contains(arr[i]))
-                min = i;
-            else {
-                set.add(arr[i]);
-            }
+    public static boolean containsDupes(int[] arr) {
+        Set<Integer> arraySet = new HashSet<Integer>();
+        for (int value : arr) {
+            if (!arraySet.add(value))
+                return true;
         }
-        if (min != -1)
-            System.out.println(arr[min] + " is a duplicate");
-        else
-            System.out.println("There are no duplicates");
+        return false;
     }
 
     /**
@@ -48,14 +30,16 @@ public class Main {
         int[] arr = {1, 1, 2, 2, 3, 4, 4, 5};
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int value : arr) {
-            if (map.containsKey(value))
+            if (map.containsKey(value)) {
                 map.put(value, 1 + map.get(value));
-            else
+            } else {
                 map.put(value, 1);
+            }
         }
-        for (Map.Entry entry : map.entrySet()) {
-            if (Integer.parseInt(String.valueOf(entry.getValue())) == 1)
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (Integer.parseInt(String.valueOf(entry.getValue())) == 1) {
                 System.out.print(entry.getKey() + " ");
+            }
         }
     }
 
@@ -87,22 +71,18 @@ public class Main {
      * A method that returns the first non-repeated character in a string.
      */
 
-    public static Character firstNonRepeatedCharacter(String str) {
-        HashMap<Character, Integer> characterHashTable = new LinkedHashMap<>();
-        int length;
-        Character ch;
-        length = str.length();
-        for (int i = 0; i < length; i++) {
-            ch = str.charAt(i);
-            if (characterHashTable.containsKey(ch)) {
-                characterHashTable.put(ch, characterHashTable.get(ch) + 1);
-            } else {
-                characterHashTable.put(ch, 1);
+    public static Character firstNonDupe(String s) {
+        Set<Character> charSet = new HashSet<>();
+        Set<Character> dupe = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (!charSet.add(s.charAt(i))) {
+                dupe.add(s.charAt(i));
             }
         }
-        for (Map.Entry<Character, Integer> entry : characterHashTable.entrySet()) {
-            if (entry.getValue() == 1)
-                return entry.getKey();
+        for (int i = 0; i < s.length(); i++) {
+            if (!dupe.contains(s.charAt(i))) {
+                return s.charAt(i);
+            }
         }
         return null;
     }
