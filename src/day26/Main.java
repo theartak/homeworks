@@ -15,25 +15,34 @@ public class Main {
         list.add(3);
         System.out.println("Number: " + num);
         System.out.println("List: " + list);
-        copy(num, list);
+        copyElements(num, list);
         System.out.println("Number: " + num);
         System.out.println("List: " + list);
     }
 
-    //Task1
-    public static <T> void print(List<T> list) {
+    /**
+     * Task 1
+     * A method that takes a list of any type and prints its elements.
+     */
+    public static <T> void printElements(List<T> list) {
         for (T i : list) {
             System.out.println(i);
         }
     }
 
-    //Task2
-    public static <T> List<T> convert(T[] arr) {
+    /**
+     * Task 2
+     * A method that takes an array of T type and converts it to a list.
+     */
+    public static <T> List<T> convertToList(T[] arr) {
         return new ArrayList<>(Arrays.asList(arr));
     }
 
-    //Task4
-    public static void copy(List<Number> num, List<? extends Number> list) {
+    /**
+     * Task 4
+     * A method that copies the elements of a source into a destination.
+     */
+    public static void copyElements(List<Number> num, List<? extends Number> list) {
         num.clear();
         num.addAll(list);
     }
