@@ -9,15 +9,15 @@ public class Main {
     public static void main(String[] args) {
         List<Number> num = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
-        num.add(15);
-        num.add(20);
-        list.add(10);
-        list.add(30);
-        System.out.println(num);
-        System.out.println(list);
+        num.add(1);
+        num.add(2);
+        list.add(1);
+        list.add(3);
+        System.out.println("Number: " + num);
+        System.out.println("List: " + list);
         copy(num, list);
-        System.out.println(num);
-        System.out.println(list);
+        System.out.println("Number: " + num);
+        System.out.println("List: " + list);
     }
 
     //Task1
