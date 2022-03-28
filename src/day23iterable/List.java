@@ -1,6 +1,6 @@
 package day23iterable;
 
-public interface List extends Iterable<Integer>  {
+public interface List extends Iterable<Integer> {
     int size();
     boolean isEmpty();
     int get(int index);

@@ -7,10 +7,10 @@ public class LinkedList implements List {
     private int size;
 
     private static class Node {
-        int val;
+        int value;
         Node next;
         Node(int val, Node next) {
-            this.val = val;
+            this.value = val;
             this.next = next;
         }
     }
@@ -23,41 +23,43 @@ public class LinkedList implements List {
     }
 
     @Override
-    public void add(int val) {
+    public void add(int value) {
         if (head == null) {
-            head = new Node(val, null);
+            head = new Node(value, null);
             size++;
             return;
         }
         Node top = head;
         while (top.next != null)
             top = top.next;
-        top.next = new Node(val, null);
+        top.next = new Node(value, null);
         size++;
     }
 
     @Override
     public int get(int index) {
-        if (index >= size)
+        if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException();
+        }
         Node top = head;
         for (int i = 0; i < index; i++) {
             top = top.next;
         }
-        return top.val;
+        return top.value;
     }
 
     @Override
-    public void add(int index, int val) {
-        if (index >= size)
+    public void add(int index, int value) {
+        if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException();
+        }
         if (head == null) {
-            head = new Node(val, null);
+            head = new Node(value, null);
             size++;
             return;
         }
         if (index == 0) {
-            head = new Node(val, head);
+            head = new Node(value, head);
             size++;
             return;
         }
@@ -65,7 +67,7 @@ public class LinkedList implements List {
         for (int i = 0; i < index - 1; i++) {
             top = top.next;
         }
-        top.next = new Node(val, top.next);
+        top.next = new Node(value, top.next);
         size++;
     }
 
@@ -76,8 +78,9 @@ public class LinkedList implements List {
 
     @Override
     public void delete(int index) {
-        if (index >= size)
+        if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException();
+        }
         if (index == 0) {
             head = head.next;
             size--;
@@ -107,7 +110,6 @@ public class LinkedList implements List {
     }
 
     private class LinkedListIterator implements Iterator<Integer> {
-
         private Node node = head;
         private int index;
 
@@ -118,7 +120,7 @@ public class LinkedList implements List {
 
         @Override
         public Integer next() {
-            Integer value = node.val;
+            Integer value = node.value;
             node = node.next;
             index++;
             return value;
