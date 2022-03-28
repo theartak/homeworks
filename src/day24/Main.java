@@ -26,8 +26,7 @@ public class Main {
      * A method that prints the unique elements of an array
      */
 
-    public static void uniqueElements() {
-        int[] arr = {1, 1, 2, 2, 3, 4, 4, 5};
+    public static void uniqueElements(int[] arr) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int value : arr) {
             if (map.containsKey(value)) {
