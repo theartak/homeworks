@@ -1,10 +1,12 @@
 package testing;
 
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class Test {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-
+        treeMapStuff();
     }
 
     public static void classStuff(){
@@ -18,9 +20,12 @@ public class Test {
 
     public static void treeMapStuff(){
         TreeMap<Integer, String> map = new TreeMap<>();
-        map.put(1, "One");
-        map.put(3, "Three");
-        map.put(2, "Two");
+        System.out.print("Input key 1: ");
+        map.put(1, sc.nextLine());
+        System.out.print("Input key 3: ");
+        map.put(3, sc.nextLine());
+        System.out.print("Input key 2: ");
+        map.put(2, sc.nextLine());
         System.out.println(map);
     }
 }
