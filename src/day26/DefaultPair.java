@@ -1,8 +1,16 @@
 package day26;
 
 public class DefaultPair<K, V> implements Pair {
-    K key;
-    V value;
+    private K key;
+    private V value;
+
+    public DefaultPair() {
+    }
+
+    public DefaultPair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
 
     @Override
     public K getKey() {
@@ -12,13 +20,5 @@ public class DefaultPair<K, V> implements Pair {
     @Override
     public V getValue() {
         return value;
-    }
-
-    public DefaultPair() {
-    }
-
-    public DefaultPair(K key, V value) {
-        this.key = key;
-        this.value = value;
     }
 }

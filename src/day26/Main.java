@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        comparatorClass();
+        copyElementsClass();
     }
 
     /**
@@ -23,7 +23,7 @@ public class Main {
      * A method that takes an array of T type and converts it to a list.
      */
     public static <T> List<T> convertToList(T[] arr) {
-        return new ArrayList<>(Arrays.asList(arr));
+        return Arrays.asList(arr);
     }
 
     /**
@@ -78,23 +78,23 @@ public class Main {
      * Task 4
      * A method that copies the elements of a source into a destination.
      */
-    public static void copyElements(List<Number> num, List<? extends Number> list) {
-        num.clear();
-        num.addAll(list);
+    public static <V> void copyElements(List<V> src, List<? extends V> dest) {
+        src.clear();
+        src.addAll(dest);
     }
 
-    public static void copyElementsClass() {
-        List<Number> num = new ArrayList<>();
-        List<Integer> list = new ArrayList<>();
-        num.add(1);
-        num.add(2);
-        list.add(1);
-        list.add(3);
-        System.out.println("Number: " + num);
-        System.out.println("List: " + list);
-        copyElements(num, list);
-        System.out.println("Number: " + num);
-        System.out.println("List: " + list);
+    public static <V> void copyElementsClass() {
+        List<V> src = new ArrayList<>();
+        List<V> dest = new ArrayList<>();
+        src.add((V) ((Integer) 1));
+        src.add((V) ((Integer) 2));
+        dest.add((V) ((Integer) 3));
+        dest.add((V) ((Integer) 4));
+        System.out.println("Number: " + src);
+        System.out.println("List: " + dest);
+        copyElements(src, dest);
+        System.out.println("Number: " + src);
+        System.out.println("List: " + dest);
     }
 
     /**
