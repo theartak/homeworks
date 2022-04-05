@@ -1,4 +1,4 @@
-package day27;
+package day27.task1;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -17,8 +17,8 @@ public class Main {
      */
     public static void countHellos() throws IOException {
         //Uses file paths from my PC
-        File srcFile = new File("C:\\Users\\PC\\IdeaProjects\\Homeworks\\src\\day27\\hello.txt");
-        File destFile = new File("C:\\Users\\PC\\IdeaProjects\\Homeworks\\src\\day27\\helloCount.txt");
+        File srcFile = new File("C:\\Users\\PC\\IdeaProjects\\Homeworks\\src\\day27\\task1\\hello.txt");
+        File destFile = new File("C:\\Users\\PC\\IdeaProjects\\Homeworks\\src\\day27\\task1\\helloCount.txt");
         FileReader fr = new FileReader(srcFile);
         FileWriter fw = new FileWriter(destFile);
         BufferedReader reader = new BufferedReader(fr);
@@ -39,4 +39,6 @@ public class Main {
         writer.write("The count of hello's is " + count);
         writer.close();
     }
+
+
 }
