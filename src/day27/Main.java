@@ -16,7 +16,7 @@ public class Main {
      * and writes it to another file.
      */
     public static void countHellos() throws IOException {
-        //Uses my files' paths from my PC
+        //Uses files' paths from my PC
         File srcFile = new File("C:\\Users\\PC\\IdeaProjects\\Homeworks\\src\\day27\\hello.txt");
         File destFile = new File("C:\\Users\\PC\\IdeaProjects\\Homeworks\\src\\day27\\helloCount.txt");
         FileReader fr = new FileReader(srcFile);
