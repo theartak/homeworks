@@ -1,0 +1,1 @@
+User{name='Artak', surname='Karapetyan', age=25}
